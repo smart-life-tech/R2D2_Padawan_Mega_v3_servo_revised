@@ -1,0 +1,5 @@
+{
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega",
+    "sketch": "R2D2_Padawan_Mega_v3_servo_revised.ino"
+}
