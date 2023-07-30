@@ -297,6 +297,7 @@ void setup()
   Wire.begin();
 
    Serial.begin(115200);
+   Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
   //  Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
   while (!Serial)
     ;
