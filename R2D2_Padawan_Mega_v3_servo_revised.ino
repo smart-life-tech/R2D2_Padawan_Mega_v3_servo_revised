@@ -296,8 +296,8 @@ void setup()
   // Start I2C Bus. The body is the master.
   Wire.begin();
 
-   Serial.begin(115200);
-   Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
+  Serial.begin(115200);
+  Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
   //  Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
   while (!Serial)
     ;
@@ -307,7 +307,7 @@ void setup()
     while (1)
       ; // halt
   }
-   Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
+  Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
 }
 
 void loop()
@@ -491,6 +491,11 @@ void loop()
 
       // pwm1.setPWM(1,0,RightDoorOpen);
     }
+    if (Xbox.getButtonPress(L2, 0))
+    {
+      autoHolo();
+      Serial.println("auto funtion enabled");
+    }
   }
 
   // start Interface Arm animation when pressing left and R1
@@ -523,7 +528,6 @@ void loop()
 
     if (Xbox.getButtonPress(RIGHT, 0))
     {
-
       pwm1.setPWM(9, 0, chargebayDoorOpen);
     }
   }
@@ -570,7 +574,7 @@ void loop()
       Serial.println("auto funtion enabled");
     }
   }
-//===========================================================================================
+  //===========================================================================================
   // GENERAL SOUND PLAYBACK AND DISPLAY CHANGING
 
   // Y Button and Y combo buttons
@@ -978,14 +982,14 @@ void triggerI2C(byte deviceID, byte eventID)
 
 void autoHolo()
 {
-  state = random(6); // delay time changing to a higher will make it slower, and lower will make it faster
+  state = random(1); // delay time changing to a higher will make it slower, and lower will make it faster
   if (state)
     pwm2.setPWM(0, 0, 40); // open angle 40
   else
     pwm2.setPWM(0, 0, 90); // close angle
   delay(random(60, 700));  // another delay time changing values will either make it slower or faster
 
-  state = random(6);
+  state = random(1);
   if (state)
     pwm2.setPWM(0, 0, 30);
   else
@@ -1006,7 +1010,7 @@ void autoHolo()
     pwm2.setPWM(0, 0, 90);
   delay(random(40, 700));
 
-  state = random(6);
+  state = random(1);
   if (state)
     pwm2.setPWM(0, 0, 30);
   else
