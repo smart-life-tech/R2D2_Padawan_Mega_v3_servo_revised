@@ -296,7 +296,7 @@ void setup()
   // Start I2C Bus. The body is the master.
   Wire.begin();
 
-  // Serial.begin(115200);
+   Serial.begin(115200);
   //  Wait for serial port to connect - used on Leonardo, Teensy and other boards with built-in USB CDC serial connection
   while (!Serial)
     ;
@@ -306,7 +306,7 @@ void setup()
     while (1)
       ; // halt
   }
-  // Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
+   Serial.print(F("\r\nXbox Wireless Receiver Library Started"));
 }
 
 void loop()
