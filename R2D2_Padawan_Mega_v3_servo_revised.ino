@@ -566,6 +566,7 @@ void loop()
     if (Xbox.getButtonPress(L2, 0))
     {
       autoHolo();
+      Serial.println("auto funtion enabled");
     }
   }
 //===========================================================================================
